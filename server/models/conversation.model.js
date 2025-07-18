@@ -8,6 +8,11 @@ const conversationSchema = new mongoose.Schema(
         ref: "User",
       },
     ],
+     conversationKey: {
+    type: String,
+    unique: true,     // optional, but recommended to avoid duplicate conversations
+    index: true
+  },
     messages: [
       {
         type: mongoose.Schema.Types.ObjectId,
